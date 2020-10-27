@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="org.restAssured.junit.CRUDTest" skipped="0" tests="1" time="82.35" timestamp="2020-09-251 12:35:25"><testcase classname="org.restAssured.junit.CRUDTest" name="Verify create"><error type="java.lang.ExceptionInInitializerError"/><system-err>null&#13;
+io.restassured.authentication.NoAuthScheme.$getStaticMetaClass(NoAuthScheme.groovy)&#13;
+io.restassured.authentication.NoAuthScheme.&lt;init&gt;(NoAuthScheme.groovy)&#13;
+io.restassured.RestAssured.&lt;clinit&gt;(RestAssured.java:354)&#13;
+org.restAssured.utils.CommonRestMethods.postAndGetRespose(CommonRestMethods.java:39)&#13;
+org.restuAssured.cucumber.serenity.SerenitySteps.createRecord(SerenitySteps.java:26)&#13;
+org.restAssured.junit.CRUDTest.verifyCreate(CRUDTest.java:31)&#13;
+org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)&#13;
+org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)&#13;
+</system-err></testcase></testsuite>
