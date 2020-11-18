@@ -9,17 +9,20 @@ import org.json.JSONObject;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.restAssured.cucumber.steps.StepsClass;
 import org.restAssured.utils.CommonRestMethods;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.serenitybdd.rest.SerenityRest;
+import net.thucydides.core.annotations.Step;
 
 @RunWith(SerenityRunner.class)
 public class SerenityTest {
 	
 	CommonRestMethods restCommonMethods = new CommonRestMethods();
+	StepsClass steps = new StepsClass();
 	
 	@BeforeClass
 	public static void init()
@@ -30,6 +33,7 @@ public class SerenityTest {
 	
 	
 	@Test
+	@Step
 	public void getDetails() throws InterruptedException
 	{
 		String baseUrl = "http://restcountries.eu/rest/v1/name/India";
@@ -47,6 +51,7 @@ public class SerenityTest {
 				for(String singleAltSpelling : altSpellings)
 				if(singleAltSpelling.equalsIgnoreCase("Republic of India"))
 				{
+					steps.printInReport("Alternate Name : "+singleAltSpelling);
 					System.out.println("Alternate Name : "+singleAltSpelling);
 					break;
 				}

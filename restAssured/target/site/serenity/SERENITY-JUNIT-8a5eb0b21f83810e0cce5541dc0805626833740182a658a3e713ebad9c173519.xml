@@ -1,1 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="org.restAssured.junit.SerenityTest" skipped="0" tests="1" time="5.84" timestamp="2020-09-248 07:56:26"><testcase classname="org.restAssured.junit.SerenityTest" name="Get details"/></testsuite>
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="org.restAssured.junit.SerenityTest" skipped="0" tests="1" time="0.87" timestamp="2020-11-323 02:13:49"><testcase classname="org.restAssured.junit.SerenityTest" name="Get details"/></testsuite>
