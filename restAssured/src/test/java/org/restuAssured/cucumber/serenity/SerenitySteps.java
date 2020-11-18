@@ -1,8 +1,10 @@
 package org.restuAssured.cucumber.serenity;
 
+import org.json.JSONObject;
 import org.restAssured.model.CustomerClass;
 import org.restAssured.utils.CommonRestMethods;
 
+import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import net.thucydides.core.annotations.Step;
@@ -26,6 +28,24 @@ public class SerenitySteps {
 			System.out.println(e.getMessage());
 		}
 		return null;
+	}
+	
+	
+	String baseURI = "https://reqres.in/api/users";
+
+	@Step
+	public void getPostResponse()
+	{
+	JSONObject json = new JSONObject();
+	json.put("name","Yashwanth");
+	json.put("Job","Engineer");
+	
+	Response res = RestAssured.given()
+			.body(json.toString())
+			.post(baseURI);
+	String responseValue = res.asString();
+	System.out.println("String : "+responseValue);
+	System.out.println("Repsose Code : "+res.getStatusCode());
 	}
 	
 	public int getStatusCodeForCreateRecord()

@@ -4,8 +4,8 @@
 Feature: Rest Assured API
 
   @Scenario1
-  Scenario: Title of your scenario
-    Given I want to write a step with precondition
+  Scenario: Post Scenario with Validation
+    Given Post the end point and validate the response
     
 
 

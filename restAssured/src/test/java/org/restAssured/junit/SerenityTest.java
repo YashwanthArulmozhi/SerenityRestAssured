@@ -9,7 +9,7 @@ import org.json.JSONObject;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.restAssured.cucumber.steps.StepsClass;
+import org.restAssured.runner.TestRunner;
 import org.restAssured.utils.CommonRestMethods;
 
 import io.restassured.RestAssured;
@@ -22,7 +22,6 @@ import net.thucydides.core.annotations.Step;
 public class SerenityTest {
 	
 	CommonRestMethods restCommonMethods = new CommonRestMethods();
-	StepsClass steps = new StepsClass();
 	
 	@BeforeClass
 	public static void init()
@@ -34,10 +33,10 @@ public class SerenityTest {
 	
 	@Test
 	@Step
-	public void getDetails() throws InterruptedException
+	public void getAlternateDetailsForIndia() throws InterruptedException
 	{
-		String baseUrl = "http://restcountries.eu/rest/v1/name/India";
-		Response res = restCommonMethods.getRespose(baseUrl);
+		//String baseUrl = "http://restcountries.eu/rest/v1/name/India";
+		Response res = restCommonMethods.getRespose("/India");
 		if(restCommonMethods.validateStatusCode() == 200)
 		{
 		JSONArray arr = new JSONArray(res.asString());
@@ -51,7 +50,6 @@ public class SerenityTest {
 				for(String singleAltSpelling : altSpellings)
 				if(singleAltSpelling.equalsIgnoreCase("Republic of India"))
 				{
-					steps.printInReport("Alternate Name : "+singleAltSpelling);
 					System.out.println("Alternate Name : "+singleAltSpelling);
 					break;
 				}
@@ -65,12 +63,12 @@ public class SerenityTest {
 		}
 	}
 	
-	/*@Test
+	@Test
 	public void verifyNorwayCapital() throws InterruptedException
 	{
 		Response res = SerenityRest.given()
 		.when()
-		.get("/abc");
+		.get("/Norway");
 	
 		if(res.getStatusCode() == 200)
 		{
@@ -92,5 +90,5 @@ public class SerenityTest {
 			System.out.println(res.asString());
 		}
 	}
-	*/
+	
 }
